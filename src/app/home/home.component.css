@@ -1,0 +1,7 @@
+.home{
+  min-height: 10vh;
+  margin-top: 150px;
+}
+.card{
+  --bs-card-border-width: 3px;
+}

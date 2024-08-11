@@ -1,0 +1,47 @@
+<section class="section mb-5">
+  <div class="container">
+    <div class="row g-4 ">
+      @for(data of dataDisplay;track $index){
+        <div class="col-md-4" (click)="showDescription(data.description)">
+          <div class="card h-100" >
+            <div class="card-body p-3">
+              <div class="h-100 ">
+                <img [src]="data.image" alt="" class="w-100 card-img-top h-75 pb-2">
+                <div>
+                  <h1 class="h5">{{data.title}}</h1>
+                </div>
+                <div>
+                  <p>{{data.description.split(" ",7).join(" ")}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent d-flex justify-content-between align-items-center">
+              @if (data.rating.rate<1) {
+                <span>★</span>
+              }
+              @else if (data.rating.rate>=1&&data.rating.rate<2) {
+                <span>⭐★★★★</span>
+              }@else if (data.rating.rate>=2&&data.rating.rate<3) {
+                <span>⭐⭐★★★</span>
+              }@else if (data.rating.rate>=3&&data.rating.rate<4) {
+                <span>⭐⭐⭐★★</span>
+              }@else if (data.rating.rate>=4&&data.rating.rate<5) {
+                <span>⭐⭐⭐⭐★</span>
+              }
+              @else if (data.rating.rate>=5) {
+                <span>⭐⭐⭐⭐⭐</span>
+              }
+              <span class="price">{{data.price}}$</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-description position-fixed top-0 bottom-0 start-0 end-0 z-1 d-none d-flex justify-content-center align-items-center" #Descripe (click)="closeBox($event)">
+          <div class="details  mx-auto p-5 rounded-5">
+            <h2 class="text-center pb-4">More Details:</h2>
+            <p #DescriptionParagraph></p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

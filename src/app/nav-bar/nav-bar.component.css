@@ -1,0 +1,17 @@
+.navbar{
+  background-color: #1B2430;
+}
+.navbar-brand,.nav-link{
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: "DM Serif Display", serif;
+  color: #626262f7;
+  color: #ffff;
+  margin-left: 10px;
+}
+
+.activeLink{
+  background-color: #fff;
+  color:#1B2430 ;
+  border-radius: 15px;
+}
